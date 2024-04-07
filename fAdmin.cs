@@ -31,5 +31,13 @@ namespace QuanLyQuanCafe
 
             dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "staff" });
         }
+
+        void LoadFoodList()
+        {
+            string query = "select * from Food";
+
+
+            dtgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace QuanLyQuanCafe
+﻿using QuanLyQuanCafe.DAO;
+
+namespace QuanLyQuanCafe
 {
     public partial class fLogin : Form
     {
@@ -27,7 +29,9 @@
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Login())
+            string username = txbUsername.Text;
+            string password = txbPassword.Text;
+            if (Login(username, password))
             {
                 fTableManager f = new fTableManager();
                 this.Hide();
@@ -40,7 +44,7 @@
             }
         }
 
-        bool Login()
-        { return true; }
+        bool Login(string username, string password)
+        { return AccountDAO.Instance.Login(username, password); }
     }
 }

@@ -35,7 +35,7 @@
             txbPassword = new TextBox();
             label2 = new Label();
             panel2 = new Panel();
-            txtUsername = new TextBox();
+            txbUsername = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -104,20 +104,20 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(txtUsername);
+            panel2.Controls.Add(txbUsername);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(10, 20);
             panel2.Name = "panel2";
             panel2.Size = new Size(713, 85);
             panel2.TabIndex = 0;
             // 
-            // txtUsername
+            // txbUsername
             // 
-            txtUsername.Location = new Point(189, 20);
-            txtUsername.Multiline = true;
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(524, 41);
-            txtUsername.TabIndex = 1;
+            txbUsername.Location = new Point(189, 20);
+            txbUsername.Multiline = true;
+            txbUsername.Name = "txbUsername";
+            txbUsername.Size = new Size(524, 41);
+            txbUsername.TabIndex = 1;
             // 
             // label1
             // 
@@ -154,7 +154,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private TextBox txtUsername;
+        private TextBox txbUsername;
         private Label label1;
         private Panel panel3;
         private TextBox txbPassword;
