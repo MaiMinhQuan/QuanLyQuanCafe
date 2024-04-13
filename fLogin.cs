@@ -46,5 +46,10 @@ namespace QuanLyQuanCafe
 
         bool Login(string username, string password)
         { return AccountDAO.Instance.Login(username, password); }
+
+        private void txbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -84,14 +84,14 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            thôngTinCáNhânToolStripMenuItem.Size = new Size(224, 26);
+            thôngTinCáNhânToolStripMenuItem.Size = new Size(210, 26);
             thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             thôngTinCáNhânToolStripMenuItem.Click += thôngTinCáNhânToolStripMenuItem_Click;
             // 
             // đăngXuấtToolStripMenuItem
             // 
             đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            đăngXuấtToolStripMenuItem.Size = new Size(224, 26);
+            đăngXuấtToolStripMenuItem.Size = new Size(210, 26);
             đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             đăngXuấtToolStripMenuItem.Click += đăngXuấtToolStripMenuItem_Click;
             // 
@@ -213,6 +213,7 @@
             // 
             // flpTable
             // 
+            flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 42);
             flpTable.Name = "flpTable";
             flpTable.Size = new Size(665, 575);
@@ -232,6 +233,7 @@
             Name = "fTableManager";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Phần mềm quản lý quán cafe";
+            Load += fTableManager_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel2.ResumeLayout(false);
