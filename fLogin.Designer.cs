@@ -84,10 +84,9 @@
             // 
             // txbPassword
             // 
-            txbPassword.Location = new Point(189, 20);
-            txbPassword.Multiline = true;
+            txbPassword.Location = new Point(186, 20);
             txbPassword.Name = "txbPassword";
-            txbPassword.Size = new Size(524, 41);
+            txbPassword.Size = new Size(524, 27);
             txbPassword.TabIndex = 2;
             txbPassword.Text = "123";
             txbPassword.UseSystemPasswordChar = true;
@@ -95,10 +94,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(20, 20);
             label2.Name = "label2";
-            label2.Size = new Size(140, 34);
+            label2.Size = new Size(111, 27);
             label2.TabIndex = 0;
             label2.Text = "Mật khẩu";
             label2.Click += label1_Click;
@@ -114,10 +113,9 @@
             // 
             // txbUsername
             // 
-            txbUsername.Location = new Point(189, 20);
-            txbUsername.Multiline = true;
+            txbUsername.Location = new Point(186, 27);
             txbUsername.Name = "txbUsername";
-            txbUsername.Size = new Size(524, 41);
+            txbUsername.Size = new Size(524, 27);
             txbUsername.TabIndex = 1;
             txbUsername.Text = "admin";
             txbUsername.TextChanged += txbUsername_TextChanged;
@@ -125,10 +123,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(20, 20);
             label1.Name = "label1";
-            label1.Size = new Size(145, 34);
+            label1.Size = new Size(117, 27);
             label1.TabIndex = 0;
             label1.Text = "Tài khoản";
             label1.Click += label1_Click;

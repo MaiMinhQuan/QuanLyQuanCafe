@@ -40,6 +40,7 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             panel3 = new Panel();
+            txbTotalPrice = new TextBox();
             btnSwitchTable = new Button();
             nmDiscount = new NumericUpDown();
             btnDiscount = new Button();
@@ -102,18 +103,18 @@
             // panel2
             // 
             panel2.Controls.Add(lsvBill);
-            panel2.Location = new Point(654, 123);
+            panel2.Location = new Point(621, 123);
             panel2.Name = "panel2";
-            panel2.Size = new Size(417, 407);
+            panel2.Size = new Size(450, 407);
             panel2.TabIndex = 2;
             // 
             // lsvBill
             // 
             lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lsvBill.GridLines = true;
-            lsvBill.Location = new Point(0, 3);
+            lsvBill.Location = new Point(4, 3);
             lsvBill.Name = "lsvBill";
-            lsvBill.Size = new Size(414, 401);
+            lsvBill.Size = new Size(443, 401);
             lsvBill.TabIndex = 0;
             lsvBill.UseCompatibleStateImageBehavior = false;
             lsvBill.View = View.Details;
@@ -121,35 +122,48 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Tên món ăn";
-            columnHeader1.Width = 190;
+            columnHeader1.Width = 200;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Số lượng";
-            columnHeader2.Width = 70;
+            columnHeader2.Width = 75;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Đơn giá";
-            columnHeader3.Width = 70;
+            columnHeader3.Width = 75;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Thành tiền";
-            columnHeader4.Width = 75;
+            columnHeader4.Width = 90;
             // 
             // panel3
             // 
             panel3.AutoSize = true;
+            panel3.Controls.Add(txbTotalPrice);
             panel3.Controls.Add(btnSwitchTable);
             panel3.Controls.Add(nmDiscount);
             panel3.Controls.Add(btnDiscount);
             panel3.Controls.Add(comboBox3);
             panel3.Controls.Add(btnCheckOut);
-            panel3.Location = new Point(654, 536);
+            panel3.Location = new Point(625, 536);
             panel3.Name = "panel3";
-            panel3.Size = new Size(405, 81);
+            panel3.Size = new Size(434, 81);
             panel3.TabIndex = 3;
+            // 
+            // txbTotalPrice
+            // 
+            txbTotalPrice.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txbTotalPrice.ForeColor = Color.Red;
+            txbTotalPrice.Location = new Point(206, 22);
+            txbTotalPrice.Name = "txbTotalPrice";
+            txbTotalPrice.ReadOnly = true;
+            txbTotalPrice.Size = new Size(125, 31);
+            txbTotalPrice.TabIndex = 3;
+            txbTotalPrice.Text = "0";
+            txbTotalPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // btnSwitchTable
             // 
@@ -162,7 +176,7 @@
             // 
             // nmDiscount
             // 
-            nmDiscount.Location = new Point(157, 41);
+            nmDiscount.Location = new Point(106, 41);
             nmDiscount.Name = "nmDiscount";
             nmDiscount.Size = new Size(94, 27);
             nmDiscount.TabIndex = 2;
@@ -170,7 +184,7 @@
             // 
             // btnDiscount
             // 
-            btnDiscount.Location = new Point(157, 3);
+            btnDiscount.Location = new Point(106, 3);
             btnDiscount.Name = "btnDiscount";
             btnDiscount.Size = new Size(94, 31);
             btnDiscount.TabIndex = 1;
@@ -187,7 +201,7 @@
             // 
             // btnCheckOut
             // 
-            btnCheckOut.Location = new Point(308, 3);
+            btnCheckOut.Location = new Point(337, 3);
             btnCheckOut.Name = "btnCheckOut";
             btnCheckOut.Size = new Size(94, 65);
             btnCheckOut.TabIndex = 1;
@@ -200,14 +214,14 @@
             panel4.Controls.Add(btnAddFood);
             panel4.Controls.Add(comboBox2);
             panel4.Controls.Add(comboBox1);
-            panel4.Location = new Point(654, 42);
+            panel4.Location = new Point(621, 42);
             panel4.Name = "panel4";
-            panel4.Size = new Size(407, 75);
+            panel4.Size = new Size(447, 75);
             panel4.TabIndex = 4;
             // 
             // nmFoodCount
             // 
-            nmFoodCount.Location = new Point(346, 26);
+            nmFoodCount.Location = new Point(368, 24);
             nmFoodCount.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nmFoodCount.Name = "nmFoodCount";
             nmFoodCount.Size = new Size(56, 27);
@@ -216,7 +230,7 @@
             // 
             // btnAddFood
             // 
-            btnAddFood.Location = new Point(246, 3);
+            btnAddFood.Location = new Point(256, 3);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.Size = new Size(94, 67);
             btnAddFood.TabIndex = 1;
@@ -244,7 +258,7 @@
             flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 42);
             flpTable.Name = "flpTable";
-            flpTable.Size = new Size(636, 575);
+            flpTable.Size = new Size(603, 575);
             flpTable.TabIndex = 5;
             // 
             // fTableManager
@@ -266,6 +280,7 @@
             menuStrip1.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
             panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nmFoodCount).EndInit();
@@ -299,5 +314,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private TextBox txbTotalPrice;
     }
 }

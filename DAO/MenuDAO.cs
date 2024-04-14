@@ -23,7 +23,7 @@ namespace QuanLyQuanCafe.DAO
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "select f.name, bi.count, f.price, f.price * bi.count as total_price from [dbo].[BillInfo] as bi, [dbo].[Bill] as b, [dbo].[Food] as f where bi.id_bill = b.id and bi.id_food = f.id and b.id_table = " + id;
+            string query = "select f.name, bi.count, f.price, f.price * bi.count as total_price from [dbo].[BillInfo] as bi, [dbo].[Bill] as b, [dbo].[Food] as f where bi.id_bill = b.id and bi.id_food = f.id and b.id_table = " + id + " and b.status = 0";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
