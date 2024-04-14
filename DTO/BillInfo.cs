@@ -20,8 +20,8 @@ namespace QuanLyQuanCafe.DTO
         public BillInfo(DataRow row)
         {
             this.ID = (int)row["id"];
-            this.BillId = (int)row["billID"];
-            this.FoodId = (int)row["foodId"];
+            this.BillId = (int)row["id_bill"];
+            this.FoodId = (int)row["id_food"];
             this.Count = (int)row["count"];
         }
 

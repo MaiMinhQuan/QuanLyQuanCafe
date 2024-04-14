@@ -49,8 +49,8 @@
             panel4 = new Panel();
             nmFoodCount = new NumericUpDown();
             btnAddFood = new Button();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cbCategory = new ComboBox();
+            cbFood = new ComboBox();
             flpTable = new FlowLayoutPanel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             menuStrip1.SuspendLayout();
@@ -212,8 +212,8 @@
             // 
             panel4.Controls.Add(nmFoodCount);
             panel4.Controls.Add(btnAddFood);
-            panel4.Controls.Add(comboBox2);
-            panel4.Controls.Add(comboBox1);
+            panel4.Controls.Add(cbCategory);
+            panel4.Controls.Add(cbFood);
             panel4.Location = new Point(621, 42);
             panel4.Name = "panel4";
             panel4.Size = new Size(447, 75);
@@ -236,22 +236,24 @@
             btnAddFood.TabIndex = 1;
             btnAddFood.Text = "Thêm món";
             btnAddFood.UseVisualStyleBackColor = true;
+            btnAddFood.Click += btnAddFood_Click;
             // 
-            // comboBox2
+            // cbCategory
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(4, 5);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(236, 28);
-            comboBox2.TabIndex = 0;
+            cbCategory.FormattingEnabled = true;
+            cbCategory.Location = new Point(4, 5);
+            cbCategory.Name = "cbCategory";
+            cbCategory.Size = new Size(236, 28);
+            cbCategory.TabIndex = 0;
+            cbCategory.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // comboBox1
+            // cbFood
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(4, 39);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(236, 28);
-            comboBox1.TabIndex = 0;
+            cbFood.FormattingEnabled = true;
+            cbFood.Location = new Point(4, 39);
+            cbFood.Name = "cbFood";
+            cbFood.Size = new Size(236, 28);
+            cbFood.TabIndex = 0;
             // 
             // flpTable
             // 
@@ -299,11 +301,11 @@
         private ListView lsvBill;
         private Panel panel3;
         private Panel panel4;
-        private ComboBox comboBox1;
+        private ComboBox cbFood;
         private Button btnCheckOut;
         private NumericUpDown nmFoodCount;
         private Button btnAddFood;
-        private ComboBox comboBox2;
+        private ComboBox cbCategory;
         private FlowLayoutPanel flpTable;
         private Button btnSwitchTable;
         private NumericUpDown nmDiscount;
