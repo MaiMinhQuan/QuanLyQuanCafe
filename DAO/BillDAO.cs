@@ -37,6 +37,12 @@ namespace QuanLyQuanCafe.DAO
             return -1;
         }
 
+        public void CheckOut(int id)
+        {
+            string query = "update Bill set status = 1 where id = " + id;
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
         public void InsertBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @id_table", new object[] { id });

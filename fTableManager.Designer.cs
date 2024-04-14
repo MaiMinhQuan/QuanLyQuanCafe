@@ -207,6 +207,7 @@
             btnCheckOut.TabIndex = 1;
             btnCheckOut.Text = "Thanh toán";
             btnCheckOut.UseVisualStyleBackColor = true;
+            btnCheckOut.Click += btnCheckOut_Click;
             // 
             // panel4
             // 
