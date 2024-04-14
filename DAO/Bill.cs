@@ -9,12 +9,13 @@ namespace QuanLyQuanCafe.DAO
 {
     public class Bill
     {
-        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckOut, int status)
+        public Bill(int id, DateTime? dateCheckIn, DateTime? dateCheckOut, int status, int discount)
         {
             this.ID = id;
             this.DateCheckIn = dateCheckIn;
             this.DateCheckOut = dateCheckOut;
             this.Status = status;
+            this.Discount = discount;
         }
 
         public Bill(DataRow row)
@@ -28,6 +29,12 @@ namespace QuanLyQuanCafe.DAO
             }
             
             this.Status = (int)row["status"];
+
+            if (row["discount"].ToString() != "")
+            {
+                this.Discount = (int)row["discount"];
+            }
+            
         }
 
         private int status;
@@ -61,5 +68,11 @@ namespace QuanLyQuanCafe.DAO
             get { return iD; }
             private set { iD = value; }
         }
+
+        
+
+        private int discount;
+
+        public int Discount { get => discount; set => discount = value; }
     }
 }

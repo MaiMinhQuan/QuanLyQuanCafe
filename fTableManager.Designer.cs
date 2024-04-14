@@ -44,7 +44,7 @@
             btnSwitchTable = new Button();
             nmDiscount = new NumericUpDown();
             btnDiscount = new Button();
-            comboBox3 = new ComboBox();
+            cbSwitchTable = new ComboBox();
             btnCheckOut = new Button();
             panel4 = new Panel();
             nmFoodCount = new NumericUpDown();
@@ -146,7 +146,7 @@
             panel3.Controls.Add(btnSwitchTable);
             panel3.Controls.Add(nmDiscount);
             panel3.Controls.Add(btnDiscount);
-            panel3.Controls.Add(comboBox3);
+            panel3.Controls.Add(cbSwitchTable);
             panel3.Controls.Add(btnCheckOut);
             panel3.Location = new Point(625, 536);
             panel3.Name = "panel3";
@@ -173,6 +173,7 @@
             btnSwitchTable.TabIndex = 1;
             btnSwitchTable.Text = "Chuyển bàn";
             btnSwitchTable.UseVisualStyleBackColor = true;
+            btnSwitchTable.Click += btnSwitchTable_Click;
             // 
             // nmDiscount
             // 
@@ -191,13 +192,13 @@
             btnDiscount.Text = "Giảm giá";
             btnDiscount.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // cbSwitchTable
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(6, 40);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(94, 28);
-            comboBox3.TabIndex = 0;
+            cbSwitchTable.FormattingEnabled = true;
+            cbSwitchTable.Location = new Point(6, 40);
+            cbSwitchTable.Name = "cbSwitchTable";
+            cbSwitchTable.Size = new Size(94, 28);
+            cbSwitchTable.TabIndex = 0;
             // 
             // btnCheckOut
             // 
@@ -311,7 +312,7 @@
         private Button btnSwitchTable;
         private NumericUpDown nmDiscount;
         private Button btnDiscount;
-        private ComboBox comboBox3;
+        private ComboBox cbSwitchTable;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
