@@ -34,7 +34,11 @@
             thôngTinCáNhânToolStripMenuItem = new ToolStripMenuItem();
             đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
             panel2 = new Panel();
-            listView1 = new ListView();
+            lsvBill = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             panel3 = new Panel();
             btnSwitchTable = new Button();
             nmDiscount = new NumericUpDown();
@@ -97,30 +101,54 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(listView1);
-            panel2.Location = new Point(693, 123);
+            panel2.Controls.Add(lsvBill);
+            panel2.Location = new Point(654, 123);
             panel2.Name = "panel2";
-            panel2.Size = new Size(366, 407);
+            panel2.Size = new Size(417, 407);
             panel2.TabIndex = 2;
             // 
-            // listView1
+            // lsvBill
             // 
-            listView1.Location = new Point(3, 3);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(360, 401);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lsvBill.GridLines = true;
+            lsvBill.Location = new Point(0, 3);
+            lsvBill.Name = "lsvBill";
+            lsvBill.Size = new Size(414, 401);
+            lsvBill.TabIndex = 0;
+            lsvBill.UseCompatibleStateImageBehavior = false;
+            lsvBill.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Tên món ăn";
+            columnHeader1.Width = 190;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Số lượng";
+            columnHeader2.Width = 70;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Đơn giá";
+            columnHeader3.Width = 70;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Thành tiền";
+            columnHeader4.Width = 75;
             // 
             // panel3
             // 
+            panel3.AutoSize = true;
             panel3.Controls.Add(btnSwitchTable);
             panel3.Controls.Add(nmDiscount);
             panel3.Controls.Add(btnDiscount);
             panel3.Controls.Add(comboBox3);
             panel3.Controls.Add(btnCheckOut);
-            panel3.Location = new Point(693, 536);
+            panel3.Location = new Point(654, 536);
             panel3.Name = "panel3";
-            panel3.Size = new Size(366, 81);
+            panel3.Size = new Size(405, 81);
             panel3.TabIndex = 3;
             // 
             // btnSwitchTable
@@ -129,12 +157,12 @@
             btnSwitchTable.Name = "btnSwitchTable";
             btnSwitchTable.Size = new Size(94, 31);
             btnSwitchTable.TabIndex = 1;
-            btnSwitchTable.Text = "Chuyển giá";
+            btnSwitchTable.Text = "Chuyển bàn";
             btnSwitchTable.UseVisualStyleBackColor = true;
             // 
             // nmDiscount
             // 
-            nmDiscount.Location = new Point(138, 41);
+            nmDiscount.Location = new Point(157, 41);
             nmDiscount.Name = "nmDiscount";
             nmDiscount.Size = new Size(94, 27);
             nmDiscount.TabIndex = 2;
@@ -142,7 +170,7 @@
             // 
             // btnDiscount
             // 
-            btnDiscount.Location = new Point(138, 3);
+            btnDiscount.Location = new Point(157, 3);
             btnDiscount.Name = "btnDiscount";
             btnDiscount.Size = new Size(94, 31);
             btnDiscount.TabIndex = 1;
@@ -159,7 +187,7 @@
             // 
             // btnCheckOut
             // 
-            btnCheckOut.Location = new Point(270, 3);
+            btnCheckOut.Location = new Point(308, 3);
             btnCheckOut.Name = "btnCheckOut";
             btnCheckOut.Size = new Size(94, 65);
             btnCheckOut.TabIndex = 1;
@@ -172,14 +200,14 @@
             panel4.Controls.Add(btnAddFood);
             panel4.Controls.Add(comboBox2);
             panel4.Controls.Add(comboBox1);
-            panel4.Location = new Point(693, 42);
+            panel4.Location = new Point(654, 42);
             panel4.Name = "panel4";
-            panel4.Size = new Size(368, 75);
+            panel4.Size = new Size(407, 75);
             panel4.TabIndex = 4;
             // 
             // nmFoodCount
             // 
-            nmFoodCount.Location = new Point(310, 26);
+            nmFoodCount.Location = new Point(346, 26);
             nmFoodCount.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             nmFoodCount.Name = "nmFoodCount";
             nmFoodCount.Size = new Size(56, 27);
@@ -188,7 +216,7 @@
             // 
             // btnAddFood
             // 
-            btnAddFood.Location = new Point(210, 5);
+            btnAddFood.Location = new Point(246, 3);
             btnAddFood.Name = "btnAddFood";
             btnAddFood.Size = new Size(94, 67);
             btnAddFood.TabIndex = 1;
@@ -200,7 +228,7 @@
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(4, 5);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(200, 28);
+            comboBox2.Size = new Size(236, 28);
             comboBox2.TabIndex = 0;
             // 
             // comboBox1
@@ -208,7 +236,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(4, 39);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 28);
+            comboBox1.Size = new Size(236, 28);
             comboBox1.TabIndex = 0;
             // 
             // flpTable
@@ -216,7 +244,7 @@
             flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 42);
             flpTable.Name = "flpTable";
-            flpTable.Size = new Size(665, 575);
+            flpTable.Size = new Size(636, 575);
             flpTable.TabIndex = 5;
             // 
             // fTableManager
@@ -253,7 +281,7 @@
         private ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private Panel panel2;
-        private ListView listView1;
+        private ListView lsvBill;
         private Panel panel3;
         private Panel panel4;
         private ComboBox comboBox1;
@@ -267,5 +295,9 @@
         private Button btnDiscount;
         private ComboBox comboBox3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }
