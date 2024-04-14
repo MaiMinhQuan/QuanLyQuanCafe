@@ -30,6 +30,11 @@ namespace QuanLyQuanCafe.DAO
             DataProvider.Instance.ExecuteQuery("exec USP_SwitchTable @id_table_1 , @id_table_2", new object[] { id1, id2 });
         }
 
+        public void CombineToTable(int id1, int id2)
+        {
+            DataProvider.Instance.ExecuteQuery("exec USP_CombineToTable @id_table_1 , @id_table_2", new object[] { id1, id2 });
+        }
+
 
         public List<Table> LoadTableList()
         {

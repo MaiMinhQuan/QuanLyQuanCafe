@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            txtUsername = new TextBox();
+            txbUsername = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
             txbDisplayName = new TextBox();
@@ -54,21 +54,21 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(txtUsername);
+            panel2.Controls.Add(txbUsername);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(12, 12);
             panel2.Name = "panel2";
             panel2.Size = new Size(713, 70);
             panel2.TabIndex = 1;
             // 
-            // txtUsername
+            // txbUsername
             // 
-            txtUsername.Location = new Point(212, 20);
-            txtUsername.Multiline = true;
-            txtUsername.Name = "txtUsername";
-            txtUsername.ReadOnly = true;
-            txtUsername.Size = new Size(501, 41);
-            txtUsername.TabIndex = 1;
+            txbUsername.Location = new Point(212, 20);
+            txbUsername.Multiline = true;
+            txbUsername.Name = "txbUsername";
+            txbUsername.ReadOnly = true;
+            txbUsername.Size = new Size(501, 41);
+            txbUsername.TabIndex = 1;
             // 
             // label1
             // 
@@ -199,6 +199,7 @@
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Cập nhật";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnExit
             // 
@@ -243,7 +244,7 @@
         #endregion
 
         private Panel panel2;
-        private TextBox txtUsername;
+        private TextBox txbUsername;
         private Label label1;
         private Panel panel1;
         private TextBox txbDisplayName;

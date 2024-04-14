@@ -40,6 +40,8 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             panel3 = new Panel();
+            btnCombineToTable = new Button();
+            cbCombineToTable = new ComboBox();
             txbTotalPrice = new TextBox();
             btnSwitchTable = new Button();
             nmDiscount = new NumericUpDown();
@@ -142,6 +144,8 @@
             // panel3
             // 
             panel3.AutoSize = true;
+            panel3.Controls.Add(btnCombineToTable);
+            panel3.Controls.Add(cbCombineToTable);
             panel3.Controls.Add(txbTotalPrice);
             panel3.Controls.Add(btnSwitchTable);
             panel3.Controls.Add(nmDiscount);
@@ -150,8 +154,26 @@
             panel3.Controls.Add(btnCheckOut);
             panel3.Location = new Point(625, 536);
             panel3.Name = "panel3";
-            panel3.Size = new Size(434, 81);
+            panel3.Size = new Size(434, 127);
             panel3.TabIndex = 3;
+            // 
+            // btnCombineToTable
+            // 
+            btnCombineToTable.Location = new Point(219, 59);
+            btnCombineToTable.Name = "btnCombineToTable";
+            btnCombineToTable.Size = new Size(94, 31);
+            btnCombineToTable.TabIndex = 5;
+            btnCombineToTable.Text = "Gộp với";
+            btnCombineToTable.UseVisualStyleBackColor = true;
+            btnCombineToTable.Click += btnCombineToTable_Click;
+            // 
+            // cbCombineToTable
+            // 
+            cbCombineToTable.FormattingEnabled = true;
+            cbCombineToTable.Location = new Point(219, 96);
+            cbCombineToTable.Name = "cbCombineToTable";
+            cbCombineToTable.Size = new Size(94, 28);
+            cbCombineToTable.TabIndex = 4;
             // 
             // txbTotalPrice
             // 
@@ -262,14 +284,14 @@
             flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 42);
             flpTable.Name = "flpTable";
-            flpTable.Size = new Size(603, 575);
+            flpTable.Size = new Size(603, 618);
             flpTable.TabIndex = 5;
             // 
             // fTableManager
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1071, 637);
+            ClientSize = new Size(1071, 672);
             Controls.Add(flpTable);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -319,5 +341,7 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private TextBox txbTotalPrice;
+        private Button btnCombineToTable;
+        private ComboBox cbCombineToTable;
     }
 }

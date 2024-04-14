@@ -33,7 +33,7 @@
             panel2 = new Panel();
             dtgvBill = new DataGridView();
             panel1 = new Panel();
-            button1btnCiewBill = new Button();
+            btnViewBill = new Button();
             dtpkToDate = new DateTimePicker();
             dtpkFromDate = new DateTimePicker();
             tpFood = new TabPage();
@@ -188,6 +188,7 @@
             // 
             // dtgvBill
             // 
+            dtgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvBill.Location = new Point(7, 3);
             dtgvBill.Name = "dtgvBill";
@@ -197,7 +198,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1btnCiewBill);
+            panel1.Controls.Add(btnViewBill);
             panel1.Controls.Add(dtpkToDate);
             panel1.Controls.Add(dtpkFromDate);
             panel1.Location = new Point(3, 5);
@@ -205,14 +206,15 @@
             panel1.Size = new Size(984, 67);
             panel1.TabIndex = 0;
             // 
-            // button1btnCiewBill
+            // btnViewBill
             // 
-            button1btnCiewBill.Location = new Point(404, 8);
-            button1btnCiewBill.Name = "button1btnCiewBill";
-            button1btnCiewBill.Size = new Size(162, 45);
-            button1btnCiewBill.TabIndex = 2;
-            button1btnCiewBill.Text = "Thống kê";
-            button1btnCiewBill.UseVisualStyleBackColor = true;
+            btnViewBill.Location = new Point(404, 8);
+            btnViewBill.Name = "btnViewBill";
+            btnViewBill.Size = new Size(162, 45);
+            btnViewBill.TabIndex = 2;
+            btnViewBill.Text = "Thống kê";
+            btnViewBill.UseVisualStyleBackColor = true;
+            btnViewBill.Click += btnViewBill_Click;
             // 
             // dtpkToDate
             // 
@@ -948,7 +950,9 @@
             ClientSize = new Size(1007, 532);
             Controls.Add(tcAdmin);
             Name = "fAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "fAdmin";
+            Load += fAdmin_Load;
             tcAdmin.ResumeLayout(false);
             tpBill.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -1017,7 +1021,7 @@
         private DataGridView dtgvBill;
         private DateTimePicker dtpkToDate;
         private DateTimePicker dtpkFromDate;
-        private Button button1btnCiewBill;
+        private Button btnViewBill;
         private Panel panel3;
         private Panel panel6;
         private Panel panel5;

@@ -17,9 +17,28 @@ namespace QuanLyQuanCafe
         public fAdmin()
         {
             InitializeComponent();
-            LoadAccountList();
+            LoadDateTimePickerBill();
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+
         }
 
+
+        #region Method
+        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
+        }
+
+        void LoadDateTimePickerBill()
+        {
+            DateTime today = DateTime.Now;
+            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
+        }
+
+        #endregion
+
+        #region Events
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -39,5 +58,18 @@ namespace QuanLyQuanCafe
 
             dtgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
+
+        private void fAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+
+
+        #endregion
     }
 }

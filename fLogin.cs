@@ -33,7 +33,8 @@ namespace QuanLyQuanCafe
             string password = txbPassword.Text;
             if (Login(username, password))
             {
-                fTableManager f = new fTableManager();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUsername(username);
+                fTableManager f = new fTableManager(loginAccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

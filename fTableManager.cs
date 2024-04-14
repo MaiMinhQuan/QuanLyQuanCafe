@@ -10,19 +10,38 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 
+
 namespace QuanLyQuanCafe
 {
     public partial class fTableManager : Form
     {
-        public fTableManager()
+        private Account loginAccount;
+
+        public Account LoginAccount 
+        { 
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+
+        public fTableManager(Account acc)
         {
             InitializeComponent();
+
+            this.LoginAccount = acc;
+
             LoadTable();
             LoadCategory();
             LoadComboBoxTable(cbSwitchTable);
+            LoadComboBoxTable(cbCombineToTable);
         }
 
         #region Method
+
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+            thôngTinTàiKhoảnToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
+        }
 
         void LoadCategory()
         {
@@ -119,7 +138,7 @@ namespace QuanLyQuanCafe
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,9 +149,16 @@ namespace QuanLyQuanCafe
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAccountProfile f = new fAccountProfile();
+            fAccountProfile f = new fAccountProfile(loginAccount);
+            f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
         }
+
+        void f_UpdateAccount(object sender, AccountEvent e)
+        {
+            thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản (" + e.Acc.DisplayName + ")";
+        }
+
 
         private void fTableManager_Load(object sender, EventArgs e)
         {
@@ -157,7 +183,7 @@ namespace QuanLyQuanCafe
         }
 
 
-        
+
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
@@ -194,7 +220,7 @@ namespace QuanLyQuanCafe
             {
                 if (MessageBox.Show(string.Format("Bạn có chắc chắn muốn thanh toán hóa đơn cho {0} ? \n Tổng tiền - (Tổng tiền / 100) * Giảm giá = {1} - ({1} / 100) * {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    BillDAO.Instance.CheckOut(idBill, discount);
+                    BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
                     ShowBill(table.ID);
                     LoadTable();
                 }
@@ -215,9 +241,20 @@ namespace QuanLyQuanCafe
             }
         }
 
-        
+        private void btnCombineToTable_Click(object sender, EventArgs e)
+        {
+            int id1 = (lsvBill.Tag as Table).ID;
+
+            int id2 = (cbCombineToTable.SelectedItem as Table).ID;
+
+            if (MessageBox.Show(string.Format("Bạn có thực sự muốn ghép {0} vào {1} không ?", (lsvBill.Tag as Table).Name, (cbCombineToTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                TableDAO.Instance.CombineToTable(id1, id2);
+                lsvBill.Items.Clear();
+                LoadTable();
+            }
+        }
 
         #endregion
-
     }
 }
