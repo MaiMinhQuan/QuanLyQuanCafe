@@ -104,14 +104,14 @@
             panel24 = new Panel();
             btnResetPassword = new Button();
             panel25 = new Panel();
-            cbAccountType = new ComboBox();
             label10 = new Label();
             panel26 = new Panel();
-            txtDisplayName = new TextBox();
+            txbDisplayName = new TextBox();
             label11 = new Label();
             panel27 = new Panel();
             txbUsername = new TextBox();
             label12 = new Label();
+            txbAccountType = new TextBox();
             tcAdmin.SuspendLayout();
             tpBill.SuspendLayout();
             panel2.SuspendLayout();
@@ -390,6 +390,7 @@
             btnSearchFood.TabIndex = 0;
             btnSearchFood.Text = "Tìm";
             btnSearchFood.UseVisualStyleBackColor = true;
+            btnSearchFood.Click += btnSearchFood_Click;
             // 
             // panel4
             // 
@@ -438,6 +439,7 @@
             btnEditFood.TabIndex = 0;
             btnEditFood.Text = "Sửa";
             btnEditFood.UseVisualStyleBackColor = true;
+            btnEditFood.Click += btnEditFood_Click;
             // 
             // btnDeleteFood
             // 
@@ -447,6 +449,7 @@
             btnDeleteFood.TabIndex = 0;
             btnDeleteFood.Text = "Xóa";
             btnDeleteFood.UseVisualStyleBackColor = true;
+            btnDeleteFood.Click += btnDeleteFood_Click;
             // 
             // btnAddFood
             // 
@@ -456,6 +459,7 @@
             btnAddFood.TabIndex = 0;
             btnAddFood.Text = "Thêm";
             btnAddFood.UseVisualStyleBackColor = true;
+            btnAddFood.Click += btnAddFood_Click;
             // 
             // tpFoodCategory
             // 
@@ -819,6 +823,7 @@
             btnShowAccount.TabIndex = 0;
             btnShowAccount.Text = "Xem";
             btnShowAccount.UseVisualStyleBackColor = true;
+            btnShowAccount.Click += btnShowAccount_Click;
             // 
             // btnEditAccount
             // 
@@ -869,20 +874,12 @@
             // 
             // panel25
             // 
-            panel25.Controls.Add(cbAccountType);
+            panel25.Controls.Add(txbAccountType);
             panel25.Controls.Add(label10);
             panel25.Location = new Point(3, 140);
             panel25.Name = "panel25";
             panel25.Size = new Size(353, 58);
             panel25.TabIndex = 6;
-            // 
-            // cbAccountType
-            // 
-            cbAccountType.FormattingEnabled = true;
-            cbAccountType.Location = new Point(146, 18);
-            cbAccountType.Name = "cbAccountType";
-            cbAccountType.Size = new Size(199, 28);
-            cbAccountType.TabIndex = 1;
             // 
             // label10
             // 
@@ -896,20 +893,20 @@
             // 
             // panel26
             // 
-            panel26.Controls.Add(txtDisplayName);
+            panel26.Controls.Add(txbDisplayName);
             panel26.Controls.Add(label11);
             panel26.Location = new Point(3, 76);
             panel26.Name = "panel26";
             panel26.Size = new Size(353, 58);
             panel26.TabIndex = 4;
             // 
-            // txtDisplayName
+            // txbDisplayName
             // 
-            txtDisplayName.Location = new Point(146, 3);
-            txtDisplayName.Multiline = true;
-            txtDisplayName.Name = "txtDisplayName";
-            txtDisplayName.Size = new Size(199, 41);
-            txtDisplayName.TabIndex = 1;
+            txbDisplayName.Location = new Point(146, 3);
+            txbDisplayName.Multiline = true;
+            txbDisplayName.Name = "txbDisplayName";
+            txbDisplayName.Size = new Size(199, 41);
+            txbDisplayName.TabIndex = 1;
             // 
             // label11
             // 
@@ -948,6 +945,14 @@
             label12.Size = new Size(101, 23);
             label12.TabIndex = 0;
             label12.Text = "Tài khoản";
+            // 
+            // txbAccountType
+            // 
+            txbAccountType.Location = new Point(146, 3);
+            txbAccountType.Multiline = true;
+            txbAccountType.Name = "txbAccountType";
+            txbAccountType.Size = new Size(199, 41);
+            txbAccountType.TabIndex = 1;
             // 
             // fAdmin
             // 
@@ -1092,13 +1097,13 @@
         private Panel panel24;
         private Button btnResetPassword;
         private Panel panel25;
-        private ComboBox cbAccountType;
         private Label label10;
         private Panel panel26;
-        private TextBox txtDisplayName;
+        private TextBox txbDisplayName;
         private Label label11;
         private Panel panel27;
         private TextBox txbUsername;
         private Label label12;
+        private TextBox txbAccountType;
     }
 }
