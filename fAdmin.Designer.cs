@@ -48,7 +48,7 @@
             txbFoodName = new TextBox();
             label1 = new Label();
             panel7 = new Panel();
-            txbDisplayName = new TextBox();
+            txbFoodID = new TextBox();
             label2 = new Label();
             panel5 = new Panel();
             txbSearchFoodName = new TextBox();
@@ -338,21 +338,22 @@
             // 
             // panel7
             // 
-            panel7.Controls.Add(txbDisplayName);
+            panel7.Controls.Add(txbFoodID);
             panel7.Controls.Add(label2);
             panel7.Location = new Point(3, 12);
             panel7.Name = "panel7";
             panel7.Size = new Size(353, 58);
             panel7.TabIndex = 3;
             // 
-            // txbDisplayName
+            // txbFoodID
             // 
-            txbDisplayName.Location = new Point(136, 3);
-            txbDisplayName.Multiline = true;
-            txbDisplayName.Name = "txbDisplayName";
-            txbDisplayName.ReadOnly = true;
-            txbDisplayName.Size = new Size(209, 41);
-            txbDisplayName.TabIndex = 1;
+            txbFoodID.Location = new Point(136, 3);
+            txbFoodID.Multiline = true;
+            txbFoodID.Name = "txbFoodID";
+            txbFoodID.ReadOnly = true;
+            txbFoodID.Size = new Size(209, 41);
+            txbFoodID.TabIndex = 1;
+            txbFoodID.TextChanged += txbFoodID_TextChanged;
             // 
             // label2
             // 
@@ -400,6 +401,7 @@
             // 
             // dtgvFood
             // 
+            dtgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvFood.Location = new Point(3, 3);
             dtgvFood.Name = "dtgvFood";
@@ -426,6 +428,7 @@
             btnShowFood.TabIndex = 0;
             btnShowFood.Text = "Xem";
             btnShowFood.UseVisualStyleBackColor = true;
+            btnShowFood.Click += btnShowFood_Click;
             // 
             // btnEditFood
             // 
@@ -477,6 +480,7 @@
             // 
             // dtgvCategory
             // 
+            dtgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvCategory.Location = new Point(3, 3);
             dtgvCategory.Name = "dtgvCategory";
@@ -618,6 +622,7 @@
             // 
             // dtgvTable
             // 
+            dtgvTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvTable.Location = new Point(3, 3);
             dtgvTable.Name = "dtgvTable";
@@ -787,6 +792,7 @@
             // 
             // dtgvAccount
             // 
+            dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvAccount.Location = new Point(3, 3);
             dtgvAccount.Name = "dtgvAccount";
@@ -1033,7 +1039,7 @@
         private Button btnDeleteFood;
         private Button btnAddFood;
         private Panel panel7;
-        private TextBox txbDisplayName;
+        private TextBox txbFoodID;
         private Label label2;
         private Panel panel8;
         private TextBox txbFoodName;
